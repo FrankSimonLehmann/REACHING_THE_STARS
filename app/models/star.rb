@@ -2,11 +2,11 @@ class Star < ApplicationRecord
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  validates :name, presense: true
-  validates :description, presense: true
+  validates :name, presence: true
+  validates :description, presence: true
   validates :description, length: { minimum: 5 }
-  validates :registration_number, presense: true
-  validates :price, presense: true
-  validates :availability, presense: true
-  validates :location, presense: true
+  validates :registration_number, presence: true
+  validates :price, presence: true
+  validates :availability, presence: true
+  validates :location, presence: true
 end

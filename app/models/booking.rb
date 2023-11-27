@@ -1,6 +1,6 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :star
-  validates :start_date, presense: true
-  validates :end_date, presense: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
 end
