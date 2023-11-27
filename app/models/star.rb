@@ -5,8 +5,8 @@ class Star < ApplicationRecord
   validates :name, presense: true
   validates :description, presense: true
   validates :description, length: { minimum: 5 }
-  validates :integer, presense: true
+  validates :registration_number, presense: true
   validates :price, presense: true
-  validates :boolean, presense: true
+  validates :availability, presense: true
   validates :location, presense: true
 end
