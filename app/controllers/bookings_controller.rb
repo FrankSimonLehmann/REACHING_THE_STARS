@@ -1,34 +1,49 @@
 class BookingsController < ApplicationController
   def new
+    @star = Star.find(params[:star_id])
     @booking = Booking.new
   end
 
   def show
-    @booking = Booking.all
+    @booking = Booking.find(params[:id])
   end
 
   # def edit
   #   @booking = Booking.find(params[:id])
   # end
 
-  def update
-    @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
-    redirect_to stars_path(@stars)
-  end
+  # def update
+  #   @booking = Booking.find(params[:id])
+  #   @booking.update(booking_params)
+  #   redirect_to stars_path(@stars)
+  # end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = @user
+    @star = Star.find(params[:star_id])
+    @booking.user = current_user
+    @booking.star = @star
     if @booking.save
-      redirect_to stars_path(@user)
+      redirect_to root_path
     else
       render :new
     end
   end
 
   def accept
-    if @booking.accepted!
+    @booking = Booking.find(params[:id])
+    @booking.update!(booking_status:true)
+    if @booking.booking_status
+      redirect_to @booking, notice: "Booking accepted"
+    else
+      redirect_to @booking, notice: "Booking could not be accepted, please try again"
+    end
+  end
+
+  def reject
+    @booking = Booking.find(params[:id])
+    @booking.update!(booking_status:false)
+    if @booking.booking_status
       redirect_to @booking, notice: "Booking accepted"
     else
       redirect_to @booking, notice: "Booking could not be accepted, please try again"
