@@ -1,2 +1,3 @@
 class StarsController < ApplicationController
+  
 end
