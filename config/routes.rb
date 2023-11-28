@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "home", to: "pages#home"
   get "booking", to: "pages#booking"
   get "ownedstars", to: "pages#ownedstars"
+  get "profile", to: "pages#profile"
   # Defines the root path route ("/")
   # root "posts#index"
 end

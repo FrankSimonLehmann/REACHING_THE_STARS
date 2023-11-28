@@ -1,0 +1,12 @@
+
+<%= simple_form_for profile_path do |f| %>
+  <%= f.input :first_name, label: "First Name"%>
+  <%= f.input :last_name, label: "Last Name"%>
+  <%= f.input :address, label: "Your address"%>
+  <%= f.input :user_description, label: "Your description" %>
+  <%= f.input :current_password,
+                hint: "we need your current password to confirm your changes",
+                required: true,
+                input_html: { autocomplete: "current-password" } %>
+  <%= f.button :submit%>
+<%end%>

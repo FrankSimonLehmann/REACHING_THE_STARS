@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!
   def home
     @stars = Star.all
   end
@@ -11,4 +10,9 @@ class PagesController < ApplicationController
   def ownedstars
     @stars = Star.all.select { |i| i.user_id == current_user.id }
   end
+
+  def profile
+    @profile = User.find(current_user.id)
+  end
+
 end
