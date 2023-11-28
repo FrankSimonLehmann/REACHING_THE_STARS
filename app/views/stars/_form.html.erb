@@ -1,0 +1,10 @@
+<%= simple_form_for star do |f| %>
+  <%# <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :registration_number %>
+  <%= f.input :price %>
+  <%= f.input :availability, input_html: { checked: true } %>
+  <%= f.input :location %>
+  <%= f.button :submit %>
+<% end %>
