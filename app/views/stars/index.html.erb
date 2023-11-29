@@ -1,0 +1,6 @@
+<h1> all the stars</h1>
+
+
+<% @stars.each do |star| %>
+<%= link_to "See star details", star_path(star) %>
+<% end %>

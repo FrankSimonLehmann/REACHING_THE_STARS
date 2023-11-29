@@ -7,6 +7,6 @@ class Star < ApplicationRecord
   validates :description, length: { minimum: 5 }
   validates :registration_number, presence: true
   validates :price, presence: true
-  validates :availability, presence: true
+  validates :availability, presence: true, allow_blank: true
   validates :location, presence: true
 end
