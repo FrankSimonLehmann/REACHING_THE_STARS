@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-
   def show
     @booking = Booking.find(params[:id])
   end
@@ -27,13 +26,13 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to mybookings_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def accept
     @booking = Booking.find(params[:id])
-    @booking.update!(booking_status:true)
+    @booking.update!(booking_status: true)
     if @booking.booking_status
       redirect_to mybookings_path, notice: "Booking accepted"
     else
@@ -43,7 +42,7 @@ class BookingsController < ApplicationController
 
   def reject
     @booking = Booking.find(params[:id])
-    @booking.update!(booking_status:false)
+    @booking.update!(booking_status: false)
     if @booking.booking_status
       redirect_to @booking, notice: "Booking rejected"
     else
@@ -62,4 +61,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:booking_status, :comment, :start_date, :end_date)
   end
+
 end
