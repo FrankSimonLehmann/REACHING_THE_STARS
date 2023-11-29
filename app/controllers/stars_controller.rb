@@ -11,7 +11,7 @@ class StarsController < ApplicationController
   def create
     @star = Star.new(star_params)
     if @star.save
-      redirect_to @star
+      redirect_to ownedstars_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -20,12 +20,11 @@ class StarsController < ApplicationController
   def destroy
     @star = Star.find(params[:id])
     @star.destroy
-    redirect_to stars_path, status: see_others
+    redirect_to stars_path, status: :see_others
   end
 
   private
   def star_params
-    params.require(:star).permit(:name, :description, :registration_number, :price, :availability, :location)
+    params.require(:star).permit(:name, :description, :registration_number, :price, :availability, :location, :user_id)
   end
-
 end

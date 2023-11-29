@@ -1,5 +1,5 @@
 <%= simple_form_for star do |f| %>
-  <%# <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
+  <%= f.input :user_id, as: :hidden, input_html: { value: current_user.id } %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :registration_number %>
