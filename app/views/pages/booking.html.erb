@@ -1,6 +1,7 @@
 <h1>My bookings!</h1>
 <% @bookings.each do |booking|%>
 <%= link_to "show booking", booking_path(booking)%>
+<%= link_to "Review booking", new_booking_review_path(booking)%>
 <p>booking for <%= booking.star.name %>
 <%end%>
 
