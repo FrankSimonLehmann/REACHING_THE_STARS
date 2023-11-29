@@ -3,6 +3,7 @@ class StarsController < ApplicationController
   def index
     @stars = Star.all
   end
+
   def show
     @star = Star.find(params[:id])
     @booking = Booking.new
@@ -20,6 +21,22 @@ class StarsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @star = Star.find(params[:id])
+  end
+
+  def update
+    @star = Star.find(params[:id])
+    if @star.update(star_params)
+      redirect_to star_path(@star)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  
+
 
   def destroy
     @star = Star.find(params[:id])
