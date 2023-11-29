@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+
   def show
     @booking = Booking.find(params[:id])
   end
@@ -24,7 +25,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.star = @star
     if @booking.save
-      redirect_to root_path
+      redirect_to mybookings_path
     else
       render :new
     end
@@ -34,7 +35,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update!(booking_status:true)
     if @booking.booking_status
-      redirect_to @booking, notice: "Booking accepted"
+      redirect_to mybookings_path, notice: "Booking accepted"
     else
       redirect_to @booking, notice: "Booking could not be accepted, please try again"
     end
@@ -44,15 +45,16 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update!(booking_status:false)
     if @booking.booking_status
-      redirect_to @booking, notice: "Booking accepted"
+      redirect_to @booking, notice: "Booking rejected"
     else
-      redirect_to @booking, notice: "Booking could not be accepted, please try again"
+      redirect_to mybookings_path, notice: "Booking could not be rejected, please try again"
     end
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to stars_path(@booking.user), status: :see_other
+    redirect_to mybookings_path, status: :see_other
   end
 
   private
