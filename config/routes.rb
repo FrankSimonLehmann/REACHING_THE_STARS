@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get "home", to: "pages#home"
+  get "home", to: "pages#home" 
   get "mybookings", to: "pages#booking"
   get "ownedstars", to: "pages#ownedstars"
   get "profile", to: "pages#profile"
