@@ -2,7 +2,7 @@
 <% @bookings.each do |booking|%>
 <%= link_to "show booking", booking_path(booking)%>
 <%= link_to "Review booking", new_booking_review_path(booking)%>
-<p>booking for <%= booking.star.name %>
+<p>booking for <%= booking.star.name %> from <%= booking.start_date.to_s%> to <%= booking.end_date.to_s%> </p>
 <%end%>
 
 <%= link_to "back to home", home_path%>

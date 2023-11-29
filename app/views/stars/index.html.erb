@@ -2,5 +2,8 @@
 
 
 <% @stars.each do |star| %>
+<div class = "card">
+<p>The star name is <%= star.name%></p>
 <%= link_to "See star details", star_path(star) %>
+</div>
 <% end %>

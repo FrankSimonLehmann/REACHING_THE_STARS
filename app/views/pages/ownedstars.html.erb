@@ -1,6 +1,7 @@
 <h1>Stars I own! MUHAHAH MY INFINITE EMPIRE</h1>
 <% @stars.each do |star|%>
 <p> <%= star.name%> is my epic stars name<p>
+<%= link_to "See star details", star_path(star) %>
 <%= link_to "delete a star ", star_path(star), data: {turbo_method: :delete, turbo_confirm: "are you sure you want to delete star"}, class: "btn"%>
 <%= link_to "edit a star ", edit_star_path(star) %>
 <%end%>
