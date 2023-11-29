@@ -4,7 +4,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
-
   def show
     @booking = Booking.find(params[:id])
   end
@@ -24,6 +23,8 @@ class BookingsController < ApplicationController
     @star = Star.find(params[:star_id])
     @booking.user = current_user
     @booking.star = @star
+    raise
+    booked
     if @booking.save
       redirect_to mybookings_path
     else
@@ -33,7 +34,7 @@ class BookingsController < ApplicationController
 
   def accept
     @booking = Booking.find(params[:id])
-    @booking.update!(booking_status:true)
+    @booking.update!(booking_status: true)
     if @booking.booking_status
       redirect_to mybookings_path, notice: "Booking accepted"
     else
@@ -43,7 +44,7 @@ class BookingsController < ApplicationController
 
   def reject
     @booking = Booking.find(params[:id])
-    @booking.update!(booking_status:false)
+    @booking.update!(booking_status: false)
     if @booking.booking_status
       redirect_to @booking, notice: "Booking rejected"
     else
@@ -61,5 +62,21 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:booking_status, :comment, :start_date, :end_date)
+  end
+
+  def booked
+    booked_dates = []
+    @star = Star.find(params[:star_id])
+    @bookings = Booking.where(booking_status: true, star: @star)
+    @bookings.each do |booking|
+      starting_date = booking.start_date
+      ending_date = booking.end_date
+      while ending_date >= starting_date
+        booked_dates << starting_date.to_s
+        starting_date += 1.days
+        # start_date = start_date.next_day
+      end
+    end
+    return booked_dates
   end
 end
