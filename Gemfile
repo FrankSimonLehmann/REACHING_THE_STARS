@@ -27,6 +27,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 
+gem "dotenv-rails"
 # User management system
 gem "devise"
 
