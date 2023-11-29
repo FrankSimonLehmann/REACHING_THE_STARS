@@ -9,8 +9,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.booking = @booking
     if @review.save
-      redirect_to booking_path(@booking)
-        raise
+      redirect_to mybookings_path
     else
       render :new, status: :unprocessable_entity
     end

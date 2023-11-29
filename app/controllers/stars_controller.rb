@@ -1,10 +1,11 @@
 class StarsController < ApplicationController
-<<<<<<< HEAD
-  
-=======
 
+  def index
+    @stars = Star.all
+  end
   def show
-
+    @star = Star.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -30,5 +31,4 @@ class StarsController < ApplicationController
   def star_params
     params.require(:star).permit(:name, :description, :registration_number, :price, :availability, :location, :user_id)
   end
->>>>>>> master
 end
