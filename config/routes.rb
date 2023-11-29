@@ -4,10 +4,19 @@ Rails.application.routes.draw do
 
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :stars
+  # Defines the root path route ("/")
+  # root "posts#index"
+  resources :stars do
+    resources :bookings, only: [:new, :create]
+  end
+  resources :bookings, only: [:destroy, :show] do
+    member do
+      post :accept, :reject
+    end
+  end
 
   get "home", to: "pages#home"
-  get "booking", to: "pages#booking"
+  get "mybookings", to: "pages#booking"
   get "ownedstars", to: "pages#ownedstars"
   get "profile", to: "pages#profile"
 
