@@ -1,0 +1,11 @@
+<div class="container py-5">
+  <div class="row">
+    <h3> Book this star </h3>
+    <%= simple_form_for [@star, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :comment, placeholder: "Enter a comment about the star here" %>
+      <%= f.submit "Save",class: "btn btn-flat" %>
+    <% end  %>
+  </div>
+</div>

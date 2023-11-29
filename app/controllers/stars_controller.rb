@@ -20,7 +20,7 @@ class StarsController < ApplicationController
   def destroy
     @star = Star.find(params[:id])
     @star.destroy
-    redirect_to ownedstars_path
+    redirect_to ownedstar_path, status: :see_others
   end
 
   private
