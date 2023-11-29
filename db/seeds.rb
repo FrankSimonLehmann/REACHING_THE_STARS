@@ -15,5 +15,5 @@ Review.destroy_all
 puts "destroyed seeds"
 user = User.create!(email: "usmanv5@hotmail.com", password: "password", first_name: "usman" , last_name: "ali", address: "pluto", user_description: "hello world")
 star = Star.create!(user: user, name: "bob", description: "epic star", registration_number: 420, price: 420.420, availability: true, location: "in narnia")
-booking = Booking.create!(user: user, star: star, booking_status: false, comment: 'hello world this is my comment', start_date: Time.now, end_date: Time.new(2023,12,12))
+booking = Booking.create!(user: user, star: star, booking_status: true, comment: 'hello world this is my comment', start_date: Time.now, end_date: Time.new(2023,12,12))
 Review.create!(comment: "hahaaaaaaaaaaaaaaaaaaaa im dumbs", rating: 3, booking: booking)
