@@ -1,0 +1,7 @@
+<h1>My bookings!</h1>
+<% @bookings.each do |booking|%>
+<p>booking for <%= booking.star.name %>
+<%end%>
+
+<p>Placeholder for creating a new booking</p>
+<%= link_to "back to home", home_path%>
