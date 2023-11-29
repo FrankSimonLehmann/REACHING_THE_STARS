@@ -2,5 +2,14 @@
 
 
 <% @stars.each do |star| %>
-<%= link_to "See star details", star_path(star) %>
+  <%= link_to "See star details", star_path(star) %>
+  <%= cl_image_tag(star.photo.key,
+        width: 400, height: 300, crop: :fill) %>
 <% end %>
+
+<!--  -->
+
+
+<!-- for face detection -->
+<%= cl_image_tag(current_user.photo.key,
+      width: 150, height: 150) %>
