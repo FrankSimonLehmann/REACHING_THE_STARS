@@ -4,6 +4,18 @@
 <% @stars.each do |star| %>
 <div class = "card">
 <p>The star name is <%= star.name%></p>
-<%= link_to "See star details", star_path(star) %>
 </div>
+  <%= link_to "See star details", star_path(star) %>
+  <% if star.photo.attached? %>
+    <%= cl_image_tag(star.photo.key, width: 400, height: 300, crop: :fill) %>
+  <% else %>
+    <p>no image</p>
+  <% end %>
 <% end %>
+
+<!--  -->
+
+
+<!-- for face detection -->
+<%= cl_image_tag(current_user.photo.key,
+      width: 150, height: 150) %>
