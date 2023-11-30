@@ -1,1 +1,213 @@
 // Specific CSS for your home-page
+// @import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+// #main video{
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   // background-size: cover;
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+// }
+  video {
+    // background-position: left;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+// .overlay{
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: rgba(48,25,52,0.75);
+//   background-image: linear-gradient(to bottom, rgba(34,35,46,0.75) 50%, rgba(0,0,0,0));
+// }
+.container{
+  text-align: center;
+}
+.container h2{
+  font-weight: 600;
+  font-size: 4rem;
+  color: #00c2cb;
+}
+.container h3{
+  font-size: 40px;
+  color: #e0ffff;
+}
+.container p{
+  font-size: 25px;
+  color: #fff;
+}
+.wrapper {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Asap", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  padding-top: 20%;
+}
+
+nav {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  position: fixed;
+  width: 100%;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0px 5%;
+  z-index: 1;
+}
+// nav ul {
+//   display: flex;
+// }
+
+
+// nav ul li a {
+//   height: 40px;
+//   line-height: 43px;
+//   margin: 10px;
+//   padding: 0px 30px;
+//   display: flex;
+//   font-size: 1rem;
+//   font-weight: 600;
+//   color: #e0ffff;
+//   transition: 0.1s;
+//   padding-top: 10%;
+// }
+nav ul li a:hover,
+.main-text a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  color: #fff;
+}
+#main {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.main-text{
+  position: absolute;
+  left: 13%;
+  top: 42%;
+  transform: translate(-13%,-42%);
+  line-height: 0;
+}
+.main-text h2{
+  font-weight: 500;
+  font-size: 30px;
+  color: #e0ffff;
+}
+.main-text h1{
+  font-size: 70px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+.main-text p{
+  font-size: 20px;
+  color: #e0ffff;
+  margin: 25px 0px 25px;
+  line-height: 50px;
+}
+.main-text a{
+  width: 150px;
+  height: 40px;
+  outline: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 200;
+  padding: 1rem;
+}
+
+// .btn{
+//   border: 1px solid rgba(255, 255, 255, 0.1);
+//   color: #e0ffff;
+//   font-family: "Asap", sans-serif;
+// }
+.btn {
+  display: grid;
+  place-items: center;
+  background: #e3edf7;
+  color: white;
+  padding: 1.4em;
+  border-radius: 10px;
+  box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+	      -6px -6px 10px -1px rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.btn:hover {
+  box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+	      inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+	      -0.5px -0.5px 0px rgba(255,255,255,1),
+	      0.5px 0.5px 0px rgba(0,0,0,0.15),
+	      0px 12px 10px -10px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  transform: translateY(0.5em);
+  color: white;
+}
+.btn svg {
+  transition: transform 0.5s;
+}
+
+.btn:hover svg {
+  transform: scale(0.9);
+  fill: #333333;
+  color: white;
+}
+
+// @media (min-aspect-ratio: 16/9) {
+//   video {
+//     width: 100%;
+//     height: auto;
+//   }
+// }
+// @media (max-aspect-ratio: 16/9) {
+//   video {
+//     width: auto;
+//     height: 100%;
+//   }
+// }
+
+h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  background-color: black
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  background-color: grey;
+}
+
+
