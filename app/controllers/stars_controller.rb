@@ -39,9 +39,6 @@ class StarsController < ApplicationController
     end
   end
 
-
-
-
   def destroy
     @star = Star.find(params[:id])
     @star.destroy
@@ -50,6 +47,6 @@ class StarsController < ApplicationController
 
   private
   def star_params
-    params.require(:star).permit(:name, :description, :registration_number, :price, :availability, :location, :user_id)
+    params.require(:star).permit(:name, :description, :registration_number, :price, :availability, :location, :user_id, :photo)
   end
 end
