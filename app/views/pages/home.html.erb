@@ -49,6 +49,24 @@
         </p>
       </div>
     </section>
+<div class="container">
+<p>All the stars below!</p>
+<% @stars.each do |star| %>
+<div class = "card">
+<p>The star name is <%= star.name%></p>
+</div>
+  <%= link_to "See star details", star_path(star) %>
+  <% if star.photo.attached? %>
+    <%= cl_image_tag(star.photo.key, width: 400, height: 300, crop: :fill) %>
+  <% else %>
+    <p>no image</p>
+  <% end %>
+<% end %>
+<div>
+<%= link_to "my bookings", mybookings_path%>
+</div>
+<div>
+<%= link_to "my owned stars", ownedstars_path%>
 </div>
 
 </body>
