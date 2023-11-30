@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_27_155318) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_30_103617) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "star_id", null: false
-    t.boolean "booking_status", default: false
+    t.boolean "booking_status"
     t.text "comment"
     t.date "start_date"
     t.date "end_date"
@@ -61,6 +61,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_155318) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

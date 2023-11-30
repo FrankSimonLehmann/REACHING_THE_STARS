@@ -7,6 +7,10 @@ class StarsController < ApplicationController
   def show
     @star = Star.find(params[:id])
     @booking = Booking.new
+    @markers = [{
+      lat: @star.user.latitude,
+      lng: @star.user.longitude
+    }]
   end
 
   def new
@@ -35,7 +39,7 @@ class StarsController < ApplicationController
     end
   end
 
-  
+
 
 
   def destroy
