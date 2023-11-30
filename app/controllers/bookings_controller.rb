@@ -43,8 +43,8 @@ class BookingsController < ApplicationController
 
   def reject
     @booking = Booking.find(params[:id])
-    @booking.update!(booking_status: false)
-    if @booking.booking_status
+    @booking.update(booking_status: false)
+    if @booking.booking_status == false
       redirect_to @booking, notice: "Booking rejected"
     else
       redirect_to mybookings_path, notice: "Booking could not be rejected, please try again"
@@ -62,5 +62,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:booking_status, :comment, :start_date, :end_date)
   end
-
 end

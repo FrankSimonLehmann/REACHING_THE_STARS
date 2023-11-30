@@ -3,14 +3,21 @@
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h1>Booking for <%= @booking.star.name %> from <%= @booking.user.email %>, from the date <%=@booking.start_date%> to <%= @booking.end_date%></h1>
   </div>
-
+  <div>
+  <%if @booking.booking_status == true %>
+  <p>This booking has been approved</p>
+  <%end%>
+  <%if @booking.booking_status == false %>
+  <p>This booking has not been approved yet</p>
+  <%end%>
+  </div>
 
   <%= link_to "go back to the stars", stars_path(@stars), class: "btn btn-primary" %>
 
   <%= link_to "Delete this booking", booking_path(@booking), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?" }  %>
 
-  <%if @star.user == current_user%>
+  <%if @star.user == current_user && @booking.booking_status == false%>
   <%= link_to "Confirm this booking", accept_booking_path(@booking), class: "btn btn-primary", data: { turbo_method: :post, turbo_confirm: "Are you sure you want to accept this booking?" }  %>
-  <%= link_to "Reject this booking", reject_booking_path(@booking), class: "btn btn-primary", data: { turbo_method: :post, turbo_confirm: "Are you sure you want to accept this booking?" }  %>
+  <%= link_to "Reject this booking", reject_booking_path(@booking), class: "btn btn-primary", data: { turbo_method: :post, turbo_confirm: "Are you sure you want to decline this booking?" }  %>
   <%end%>
 </div>
