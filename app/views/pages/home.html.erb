@@ -1,16 +1,55 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<html>
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+  <%# <meta> %>
+  <link rel="stylesheet" href="">
+</head>
 
-<p>All the stars below!</p>
-<% @stars.each do |star|%>
-<p><%= star.name%>
-<%end%>
-<div>
-<%= link_to "my bookings", mybookings_path%>
+<body>
+ <nav>
+    <h3>Reaching for the star</h3>
+  </nav>
+  <div class="banner video">
+    <video src="https://res.cloudinary.com/dgxlwwwxg/video/upload/v1701342378/Galaxy_scene_3d_mtrxo0.mp4" muted autoplay loop>
+    </video>
+      <div class="main-text">
+        <h2>Let's go for a walk...</h2>
+                <h1>...On the Stars</h1>
+                    <p>
+                      And reach for the stars
+                    </p>
+                <%= button_to "Explore your stars", mybookings_path, class:"btn btn-primary" %>
+      </div>
+  </div>
+  <div class="container">
+  <div class="cards">
+        <% @stars.each do |star|%>
+          <%= link_to mybookings_path do %>
+            <div class="card">
+              <h4>
+                <%= star.name%>
+              </h4>
+              <p> <%= star.description%> </p>
+              <%=  %>
+            </div>
+          <% end %>
+          <%end%>
+  </div>
+
+<section id="next">
+      <div class="mouse">
+        <h2>Next Section</h2>
+        <h3>
+          LOrem ksnfösdjsdj
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel suscipit
+          iste ducimus minus qui error debitis exercitationem laboriosam dicta
+          facilis!
+        </p>
+      </div>
+    </section>
 </div>
-<div>
-<%= link_to "Checkout all stars", stars_path%>
-</div>
-<div>
-<%= link_to "my owned stars", ownedstars_path%>
-</div>
+
+</body>
+</html>
