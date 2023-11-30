@@ -1,33 +1,19 @@
 <div class="container">
-  <h1>Pages#home</h1>
-    <p>Find me in app/views/pages/home.html.erb</p>
-
-<<<<<<< HEAD
 <p>All the stars below!</p>
 <% @stars.each do |star| %>
 <div class = "card">
 <p>The star name is <%= star.name%></p>
-<%= link_to "See star details", star_path(star) %>
 </div>
-<%end%>
+  <%= link_to "See star details", star_path(star) %>
+  <% if star.photo.attached? %>
+    <%= cl_image_tag(star.photo.key, width: 400, height: 300, crop: :fill) %>
+  <% else %>
+    <p>no image</p>
+  <% end %>
+<% end %>
 <div>
 <%= link_to "my bookings", mybookings_path%>
 </div>
 <div>
 <%= link_to "my owned stars", ownedstars_path%>
-=======
-    <p>All the stars below!</p>
-    <% @stars.each do |star|%>
-    <p><%= star.name%>
-    <%end%>
-  <div>
-    <%= link_to "my bookings", mybookings_path%>
-  </div>
-  <div>
-    <%= link_to "Checkout all stars", stars_path%>
-  </div>
-  <div>
-    <%= link_to "my owned stars", ownedstars_path%>
-  </div>
->>>>>>> 470ff6f86b315f28dd743ba5e1aa51fd111172f4
 </div>
