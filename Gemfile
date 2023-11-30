@@ -26,7 +26,10 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-
+# secure key 
+gem "dotenv-rails"
+# USing Cloudinary
+gem "cloudinary"
 # User management system
 gem "devise"
 
