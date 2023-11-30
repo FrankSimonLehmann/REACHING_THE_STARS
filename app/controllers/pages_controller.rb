@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   def home
     @stars = Star.all
+    if params[:query].present?
+      @stars = Star.search_by_title_and_synopsis(params(:query))
+    end
   end
 
   def booking
