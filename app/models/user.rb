@@ -6,4 +6,8 @@ class User < ApplicationRecord
   has_many :reviews, through: :bookings
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def received_bookings
+    self.stars.map {|star| star.bookings }.flatten
+  end
 end

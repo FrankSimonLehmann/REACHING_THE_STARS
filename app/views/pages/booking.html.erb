@@ -5,4 +5,9 @@
 <p>booking for <%= booking.star.name %> from <%= booking.start_date.to_s%> to <%= booking.end_date.to_s%> </p>
 <%end%>
 
+
+<%@pendingbook.each do |booking|%>
+<%= link_to "Booking for #{booking.user.email}", booking_path(booking)%>
+<%end%>
+
 <%= link_to "back to home", home_path%>
