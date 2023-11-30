@@ -35,9 +35,6 @@ class StarsController < ApplicationController
     end
   end
 
-  
-
-
   def destroy
     @star = Star.find(params[:id])
     @star.destroy

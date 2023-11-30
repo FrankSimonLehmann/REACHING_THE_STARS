@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @star = @booking.star
   end
 
   # def edit

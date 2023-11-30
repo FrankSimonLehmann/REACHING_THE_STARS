@@ -2,4 +2,10 @@
 <h1>This is a star page <%= @star.name %></h1>
 
 <%= link_to "Book the star", new_star_booking_path(@star.id) %>
+
+<% if @star.availability == true && @star.user == current_user%>
+<% @star.bookings.each do |booking|%>
+<%= link_to "Booking for #{booking.user.email}", booking_path(booking)%>
+<%end%>
+<%end%>
 </div>
