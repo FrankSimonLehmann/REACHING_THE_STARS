@@ -3,8 +3,11 @@
 
 <% @stars.each do |star| %>
   <%= link_to "See star details", star_path(star) %>
-  <%= cl_image_tag(star.photo.key,
-        width: 400, height: 300, crop: :fill) %>
+  <% if star.photo.attached? %>
+    <%= cl_image_tag(star.photo.key, width: 400, height: 300, crop: :fill) %>
+  <% else %>
+    <p>no image</p>
+  <% end %>
 <% end %>
 
 <!--  -->

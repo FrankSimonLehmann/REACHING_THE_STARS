@@ -1,16 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1>Pages#home</h1>
+    <p>Find me in app/views/pages/home.html.erb</p>
 
-<p>All the stars below!</p>
-<% @stars.each do |star|%>
-<p><%= star.name%>
-<%end%>
-<div>
-<%= link_to "my bookings", mybookings_path%>
-</div>
-<div>
-<%= link_to "Checkout all stars", stars_path%>
-</div>
-<div>
-<%= link_to "my owned stars", ownedstars_path%>
+    <p>All the stars below!</p>
+    <% @stars.each do |star|%>
+    <p><%= star.name%>
+    <%end%>
+  <div>
+    <%= link_to "my bookings", mybookings_path%>
+  </div>
+  <div>
+    <%= link_to "Checkout all stars", stars_path%>
+  </div>
+  <div>
+    <%= link_to "my owned stars", ownedstars_path%>
+  </div>
 </div>
