@@ -33,6 +33,7 @@
     <%= f.input :user_description,
                 required: false,
                 input_html: { autocomplete: "user_description" } %>
+    <%= f.input :photo, required: false, as: :file %>
   </div>
 
   <div class="form-actions">
