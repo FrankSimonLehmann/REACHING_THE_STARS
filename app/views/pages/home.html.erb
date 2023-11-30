@@ -1,14 +1,5 @@
-<html>
-<head>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
-  <%# <meta> %>
-  <link rel="stylesheet" href="">
-</head>
 
-<body>
- <nav>
-    <h3>Reaching for the star</h3>
-  </nav>
+<div class="wrapper">
   <div class="banner video">
     <video src="https://res.cloudinary.com/dgxlwwwxg/video/upload/v1701342378/Galaxy_scene_3d_mtrxo0.mp4" muted autoplay loop>
     </video>
@@ -18,10 +9,28 @@
                     <p>
                       And reach for the stars
                     </p>
-                <%= button_to "Explore your stars", mybookings_path, class:"btn btn-primary" %>
+                    <div class="container">
+                  <%= button_to "Explore your stars", mybookings_path, class: "btn" %>
+                </div>
       </div>
   </div>
+
   <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-8 my-3">
+        <%= form_with url: stars_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Type a keyword"
+            %>
+          <div class="container search">
+          <%= submit_tag "Search", name: "" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="cards">
         <% @stars.each do |star|%>
           <%= link_to mybookings_path do %>
@@ -30,58 +39,25 @@
                 <%= star.name%>
               </h4>
               <p> <%= star.description%> </p>
-              <%=  %>
+              <% if star.photo.attached? %>
+                <%= cl_image_tag(star.photo.key, width: 400, height: 300, crop: :fill) %>
+                  <% else %>
+                  <%= cl_image_tag("star1.jpeg", width: 400, height: 300, crop: :fill) %>
+              <% end %>
             </div>
           <% end %>
           <%end%>
   </div>
 
-<section id="next">
-      <div class="mouse">
-        <h2>Next Section</h2>
-        <h3>
-          LOrem ksnfösdjsdj
-        </h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel suscipit
-          iste ducimus minus qui error debitis exercitationem laboriosam dicta
-          facilis!
-        </p>
-      </div>
-    </section>
-<div class="container">
-<p>All the stars below!</p>
 
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: stars_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
 
-<% @stars.each do |star| %>
-<div class = "card">
-<p>The star name is <%= star.name%></p>
-</div>
-  <%= link_to "See star details", star_path(star) %>
-  <% if star.photo.attached? %>
-    <%= cl_image_tag(star.photo.key, width: 400, height: 300, crop: :fill) %>
-  <% else %>
-    <p>no image</p>
-  <% end %>
-<% end %>
+
+
 <div>
 <%= link_to "my bookings", mybookings_path%>
 </div>
+
 <div>
 <%= link_to "my owned stars", ownedstars_path%>
 </div>
-
-</body>
-</html>
+</div>

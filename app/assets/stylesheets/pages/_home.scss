@@ -44,7 +44,7 @@
   font-size: 25px;
   color: #fff;
 }
-body {
+.wrapper {
   margin: 0px;
   padding: 0px;
   font-family: "Asap", sans-serif;
@@ -78,18 +78,18 @@ nav {
 // }
 
 
-nav ul li a {
-  height: 40px;
-  line-height: 43px;
-  margin: 10px;
-  padding: 0px 30px;
-  display: flex;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #e0ffff;
-  transition: 0.1s;
-  padding-top: 10%;
-}
+// nav ul li a {
+//   height: 40px;
+//   line-height: 43px;
+//   margin: 10px;
+//   padding: 0px 30px;
+//   display: flex;
+//   font-size: 1rem;
+//   font-weight: 600;
+//   color: #e0ffff;
+//   transition: 0.1s;
+//   padding-top: 10%;
+// }
 nav ul li a:hover,
 .main-text a:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -199,8 +199,7 @@ h4 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  // margin-left: 16px;
-  // margin-right: 16px;
+  background-color: black
 }
 
 .card {
@@ -208,4 +207,7 @@ h4 {
   box-shadow: 0 0 5px rgb(230,230,230);
   text-align: center;
   padding: 20px;
+  background-color: grey;
 }
+
+
