@@ -1,0 +1,44 @@
+.card-booking {
+  margin-top: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  list-style: none;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 16px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.275);
+  background-color: white;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-left: 16px;
+  text-align: center;
+  font-size:larger;
+}
+
+.booking-container {
+
+  padding: 16px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.booking-box {
+  justify-content: space-evenly;
+  width: 50%;
+  position: sticky;
+  top: 70px;
+  height: 100%;
+}
+
+#text {
+  color: white;
+  font-weight: bolder;
+}
+
+.spacelol{
+  height: 100px;
+  width: 100%;
+}

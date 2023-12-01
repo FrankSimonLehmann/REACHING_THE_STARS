@@ -1,0 +1,61 @@
+#bannerstar {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#bannerstar h1 {
+  margin: 0;
+  color: white;
+}
+
+#bannerstar p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.map-container {
+  position: sticky;
+  top: 0px;
+  height: 10vh;
+}
+
+.btn {
+  background-color: rgb(2, 14, 32);
+  color: azure;
+  margin-top: 16px;
+  width: 200px;
+}
+
+.card-product {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 400px;
+  width: 35%;
+  object-fit: cover;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 16px;
+}
+
+.card-product .card-product-infos {
+  padding-left: 16px;
+  height: 200px;
+  align-items: center;
+  text-align: left;
+}

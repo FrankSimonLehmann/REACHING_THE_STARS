@@ -47,7 +47,7 @@
 .wrapper {
   margin: 0px;
   padding: 0px;
-  font-family: "Asap", sans-serif;
+  font-family: "Cabin", sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -136,15 +136,13 @@ nav ul li a:hover,
   padding: 1rem;
 }
 
-// .btn{
-//   border: 1px solid rgba(255, 255, 255, 0.1);
-//   color: #e0ffff;
-//   font-family: "Asap", sans-serif;
-// }
-.btn {
+.buttonA {
+  border: 1px solid rgba(28, 27, 27, 0.4);
+  color: #e0ffff;
+  font-family: "Asap", sans-serif;
   display: grid;
   place-items: center;
-  background: #e3edf7;
+  background-color: rgba(8, 8, 67, 0.9);
   color: white;
   padding: 1.4em;
   border-radius: 10px;
@@ -154,24 +152,27 @@ nav ul li a:hover,
   cursor: pointer;
   transition: transform 0.5s;
 }
-.btn:hover {
-  box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-	      inset -4px -4px 6px -1px rgba(255,255,255,0.7),
-	      -0.5px -0.5px 0px rgba(255,255,255,1),
-	      0.5px 0.5px 0px rgba(0,0,0,0.15),
-	      0px 12px 10px -10px rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.1);
+.buttonA:hover {
+  // box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+	//       inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+	//       -0.5px -0.5px 0px rgba(255,255,255,1),
+	//       0.5px 0.5px 0px rgba(0,0,0,0.15),
+	//       0px 12px 10px -10px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.6);
   transform: translateY(0.5em);
   color: white;
+  font-weight: 300;
+  background-color: rgba(18, 17, 17, 0.1);
 }
-.btn svg {
+.buttonA svg {
   transition: transform 0.5s;
 }
 
-.btn:hover svg {
+.buttonA:hover svg {
   transform: scale(0.9);
   fill: #333333;
   color: white;
+  font-weight: 300;
 }
 
 // @media (min-aspect-ratio: 16/9) {
@@ -201,4 +202,17 @@ h4 {
   grid-gap: 16px;
   background-color: black
 
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  background-color: grey;
+}
+
+
+.search{
+  background-color: black;
 }
