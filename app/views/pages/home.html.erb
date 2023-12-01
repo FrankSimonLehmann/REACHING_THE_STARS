@@ -10,14 +10,14 @@
                       And reach for the stars
                     </p>
                     <div class="container">
-                  <%= button_to "Explore your stars", mybookings_path, class: "btn" %>
+                  <%= button_to "Explore your stars", mybookings_path, class: "buttonA" %>
                 </div>
       </div>
   </div>
 
   <div class="container">
     <div class="row justify-content-center">
-      <div class="col-sm-8 my-3">
+      <div class="col-sm-8 my-3 search">
         <%= form_with url: stars_path, method: :get, class: "d-flex" do %>
           <%= text_field_tag :query,
                 params[:query],
@@ -25,7 +25,7 @@
                 placeholder: "Type a keyword"
             %>
           <div class="container search">
-          <%= submit_tag "Search", name: "" %>
+          <%= submit_tag "Search", name: ""%>
           <% end %>
         </div>
       </div>
