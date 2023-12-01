@@ -18,5 +18,4 @@ class Star < ApplicationRecord
   validates :price, presence: true
   validates :availability, presence: true, allow_blank: true
   validates :location, presence: true
-  
- end
+end

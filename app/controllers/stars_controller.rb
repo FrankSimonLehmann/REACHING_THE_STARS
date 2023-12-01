@@ -9,6 +9,13 @@ class StarsController < ApplicationController
     }]
   end
 
+  def index
+    @stars = Star.all
+    if params[:query].present?
+      @stars = Star.search_by_title_and_synopsis(params[:query])
+    end
+  end
+
   def new
     @star = Star.new
   end

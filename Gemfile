@@ -52,8 +52,11 @@ gem "bootsnap", require: false
 gem "geocoder"
 
 
-# Add a search bar 
+# Add a search bar
 gem "pg_search"
+
+# create fake data
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
