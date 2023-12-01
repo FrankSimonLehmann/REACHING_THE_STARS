@@ -2,45 +2,35 @@
   overflow: hidden;
   height: 400px;
   width: 700px;
-  background-image: url(https://media.istockphoto.com/id/1047229538/photo/milky-way.webp?b=1&s=170667a&w=0&k=20&c=8RfM_hw8EcBw09CXdBNFoZU5qq3ZuRgQhV9b-0cxVsE=);
   box-shadow: 0 0 15px rgba(94, 85, 85, 0.2);
   display: flex;
   align-items: center;
-  padding: 50px;
+
 }
 
 .card-product img {
   height: 100%;
   width: 250px;
   object-fit: cover;
-  padding: 15px;
+  padding: 120px;
+  border-radius: 10px;
 }
-
-.card-product h2 {
+.card-product h1 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   color: white;
 }
 
-.card-product p {
-  color: white;
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
+.card-product  {
   padding: 16px;
 }
-
 
 .card-button {
   height: 100%;
   bottom: 0;
   display: flex
+
 }
 .card-button .btn {
   background: white;

@@ -1,62 +1,27 @@
-<div class="container">
-<h1>This is a star page <%= @star.name %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://getwallpapers.com/wallpaper/full/c/9/d/242226.jpg);">
 
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-
-<%= link_to "Book the star", new_star_booking_path(@star.id) %>
-
-</div>
-
-
-
-
-<div class="container">
-
-<div class="row justify-content-center">
-    <div class="col-12 col-lg-9">
-
-
-
-      <div class="card-product">
-       <img src="<%= @star.img%>" alt="image of the star">
+  <div class="container">
+    <div class="card-product">
+      <img src=/>
         <div class="card-product-infos">
-          <h2><%= star.name%></h2>
-          <p>star description with <strong>relevant info</strong> only.</p>
+          <h1><%= @star.name %></h1>
+          <p><%= @star.description %></p>
+          <%= link_to "Book the star", new_star_booking_path(@star.id), class:"btn btn" %>
         </div>
-        <div class="card-button">
-          <a class="btn btn-success" href="#">Rent</a>
-          <a class="btn btn-success" href="#">Review</a>
-        </div>
-      </div>
 
-
-</div>
+    </div>
   </div>
 
 
 </div>
 
-
-
-
-
-
-
-
-<div class="footer">
-  <div class="footer-links">
-
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-
-<div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+<div class= "map-container">
+  <div style="width: 100%; height: 25vh;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-</div>
+
+
+<%# <%=@star.picture%>
