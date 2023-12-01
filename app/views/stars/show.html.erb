@@ -5,7 +5,7 @@
       <%= image_tag @star.photo %>
         <div class="card-product-infos">
           <h1><%= @star.name %></h1>
-            <h4 style ="color:white;">€<%= @star.price %></h4>
+            <h4 style ="color:white;">€<%= @star.price %> per night</h4>
               <p><%= @star.description %></p>
               <h6 style ="color:white;"><%=@star.registration_number %><h6>
             <%= link_to "Book the star", new_star_booking_path(@star.id), class:"btn" %>
