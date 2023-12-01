@@ -1,5 +1,5 @@
 .banner {
-  height: 70vh;
+  height: 80vh;
   background-size: cover;
   background-position: center;
   padding: 150px 0;
@@ -11,9 +11,6 @@
 .banner h1 {
   margin: 0;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
 }
 
 .banner p {
@@ -25,25 +22,26 @@
 
 .map-container {
   position: sticky;
-    top: 0px;
+  top: 0px;
+  height: 10vh;
 }
 
 .btn {
   background-color: rgb(2, 14, 32);
   color: azure;
   margin-top: 16px;
+  width: 200px;
 }
 
 .card-product {
   overflow: hidden;
-  height: 200px;
   display: flex;
   align-items: center;
 }
 
 .card-product img {
-  height: 200%;
-  width: 200px;
+  height: 400px;
+  width: 35%;
   object-fit: cover;
 }
 
@@ -58,4 +56,6 @@
 .card-product .card-product-infos {
   padding-left: 16px;
   height: 200px;
+  align-items: center;
+  text-align: left;
 }
