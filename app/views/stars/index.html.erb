@@ -1,5 +1,5 @@
-<div class="nav-space"></div>
-  <div class="wrapper">
+<div id="nav-space"></div>
+  <div id="wrapper">
   <h1>Find your star! 👇</h1>
     <div class="row justify-content-center mt-5">
         <%= form_with url: stars_path, method: :get, class: "d-flex " do %>
@@ -14,11 +14,9 @@
         </div>
       </div>
 
-
-
-  <div class="cards">
+  <div id="cards">
     <% @stars.each do |star|%>
-      <%= link_to mybookings_path do %>
+      <%= link_to star_path(star) do %>
         <div class="card">
           <div class="icon">
             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
