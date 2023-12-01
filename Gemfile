@@ -26,7 +26,7 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-# secure key 
+# secure key
 gem "dotenv-rails"
 # USing Cloudinary
 gem "cloudinary"
@@ -50,6 +50,10 @@ gem "bootsnap", require: false
 
 # Add a map to the application
 gem "geocoder"
+
+
+# Add a search bar 
+gem "pg_search"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
